@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,31 +9,33 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #0a192f;
-            color: #ffffff;
+            background-color: #f8f9fa;
+            color: #212529;
             padding: 20px;
+            line-height: 1.6;
         }
         
         .poster {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            background: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
-            border-radius: 15px;
+            background: #ffffff;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 2px solid #64ffda;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
         }
         
         header {
-            background: linear-gradient(90deg, #172a45 0%, #0a192f 100%);
-            padding: 25px 20px;
+            background: linear-gradient(90deg, #1a237e 0%, #283593 100%);
+            padding: 30px 20px;
             text-align: center;
-            border-bottom: 2px solid #64ffda;
+            position: relative;
         }
         
         .logo-container {
@@ -46,15 +45,6 @@
             margin-bottom: 15px;
         }
         
-        .logo {
-            width: 120px;
-            height: 120px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 20px;
-        }
-        
         .title {
             text-align: center;
         }
@@ -62,51 +52,65 @@
         h1 {
             font-size: 42px;
             font-weight: 800;
-            color: #64ffda;
+            color: #ffffff;
             margin-bottom: 10px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .tagline {
             font-size: 20px;
             font-weight: 600;
-            color: #ccd6f6;
+            color: #e8eaf6;
             margin-bottom: 5px;
             font-style: italic;
         }
         
         .authors {
             font-size: 16px;
-            color: #8892b0;
+            color: #c5cae9;
             margin-bottom: 10px;
         }
         
         .supervisor {
             font-size: 14px;
-            color: #8892b0;
+            color: #c5cae9;
         }
         
         .content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 20px;
+            gap: 25px;
+            padding: 30px;
+            background-color: #ffffff;
+            flex-grow: 1;
         }
         
         .section {
-            background-color: rgba(23, 42, 69, 0.7);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid #64ffda;
+            background-color: #ffffff;
+            border-radius: 6px;
+            padding: 25px;
+            margin-bottom: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #3f51b5;
+            transition: transform 0.2s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         h2 {
-            font-size: 20px;
-            color: #64ffda;
-            margin-bottom: 15px;
+            font-size: 22px;
+            color: #1a237e;
+            margin-bottom: 20px;
             position: relative;
-            padding-bottom: 8px;
+            padding-bottom: 12px;
+            font-weight: 600;
         }
         
         h2::after {
@@ -116,7 +120,7 @@
             left: 0;
             width: 60px;
             height: 3px;
-            background-color: #64ffda;
+            background-color: #3f51b5;
         }
         
         .architecture-section {
@@ -126,95 +130,141 @@
         .architecture {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
+            margin: 25px 0;
+            overflow-x: auto;
         }
         
         ul {
             list-style-type: none;
-            margin-left: 15px;
+            margin-left: 5px;
         }
         
         ul li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             position: relative;
-            padding-left: 25px;
-            color: #ccd6f6;
+            padding-left: 28px;
+            color: #424242;
         }
         
         ul li::before {
-            content: '→';
+            content: '▶';
             position: absolute;
             left: 0;
-            color: #64ffda;
-            font-weight: bold;
+            color: #3f51b5;
+            font-size: 12px;
         }
         
         .features {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            height: 100%;
         }
         
         .feature-item {
-            background-color: rgba(13, 27, 47, 0.7);
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 3px solid #64ffda;
+            background-color: #f5f7ff;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 3px solid #3f51b5;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-item:hover {
+            background-color: #e8eaf6;
+            transform: translateY(-3px);
         }
         
         .feature-title {
             font-weight: bold;
-            color: #64ffda;
-            margin-bottom: 8px;
-            font-size: 16px;
+            color: #1a237e;
+            margin-bottom: 10px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-title::before {
+            content: "✓";
+            margin-right: 8px;
+            color: #3f51b5;
+            font-weight: bold;
         }
         
         footer {
             text-align: center;
-            padding: 15px;
-            color: #8892b0;
+            padding: 20px;
+            color: #ffffff;
             font-size: 14px;
-            border-top: 2px solid #64ffda;
-            background: linear-gradient(90deg, #0a192f 0%, #172a45 100%);
-        }
-        
-        .shield-icon {
-            color: #64ffda;
-            font-size: 60px;
-            margin-bottom: 10px;
+            background: linear-gradient(90deg, #1a237e 0%, #283593 100%);
         }
         
         .two-columns {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
+            flex-grow: 1;
         }
         
         .highlight {
-            color: #64ffda;
+            color: #3f51b5;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .highlight::before {
+            content: "•";
+            margin-right: 8px;
+            color: #3f51b5;
             font-weight: bold;
+        }
+        
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+            height: auto;
+        }
+        
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .architecture-section {
+                grid-column: span 1;
+            }
+            
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+            
+            .row {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="poster">
         <header>
-            <div class="logo-container">
-                <div class="logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100" fill="none" stroke="#64ffda" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M20 11a8 8 0 0 1-8 8v3"></path>
-                        <path d="M12 19a8 8 0 0 1-8-8H1"></path>
-                        <path d="M4 11a8 8 0 0 1 8-8V0"></path>
-                        <path d="M12 3a8 8 0 0 1 8 8h3"></path>
-                        <circle cx="12" cy="11" r="3"></circle>
-                        <line x1="8" y1="9" x2="12" y2="11"></line>
-                        <line x1="16" y1="13" x2="12" y2="11"></line>
-                    </svg>
-                </div>
-                <div class="title">
-                    <h1>Reverse Shell Killer</h1>
-                    <p class="tagline">"No Shell Shall Pass"</p>
-                </div>
+            <div class="title">
+                <h1>Reverse Shell Killer</h1>
+                <p class="tagline">"No Shell Shall Pass"</p>
             </div>
             <p class="authors">Hamid Riaz 2023-CS-10 • Muhammad Ahmed Butt 2023-CS-18 • Abdul Rehman Safdar 2023-CS-20</p>
             <p class="supervisor">Supervised by: Mam Faiza Iqbal • Department of Computer Science • UET Lahore</p>
@@ -234,7 +284,7 @@
             
             <div class="section">
                 <h2>Solution Overview</h2>
-                <p style="color: #ccd6f6; margin-bottom: 15px;">
+                <p style="color: #424242; margin-bottom: 20px; line-height: 1.7;">
                     Reverse Shell Killer is a comprehensive security tool that detects and automatically terminates malicious reverse shell connections on Linux systems, combining pattern-based detection with AI-powered analysis.
                 </p>
                 <div class="two-columns">
@@ -254,43 +304,50 @@
             <div class="section architecture-section">
                 <h2>System Architecture</h2>
                 <div class="architecture">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
                         <!-- Background -->
                         <rect x="0" y="0" width="800" height="300" fill="none" />
                         
                         <!-- Central Component -->
-                        <rect x="300" y="100" width="200" height="80" rx="5" fill="#172a45" stroke="#64ffda" stroke-width="2" />
-                        <text x="400" y="145" text-anchor="middle" fill="#64ffda" font-size="16" font-weight="bold">Process Scanner</text>
-                        <text x="400" y="165" text-anchor="middle" fill="#ccd6f6" font-size="12">Core Detection Engine</text>
+                        <rect x="300" y="100" width="200" height="80" rx="5" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+                        <text x="400" y="145" text-anchor="middle" fill="#1a237e" font-size="16" font-weight="bold">Process Scanner</text>
+                        <text x="400" y="165" text-anchor="middle" fill="#3f51b5" font-size="12">Core Detection Engine</text>
                         
                         <!-- Left Components -->
-                        <rect x="100" y="60" width="150" height="60" rx="5" fill="#172a45" stroke="#64ffda" stroke-width="2" />
-                        <text x="175" y="90" text-anchor="middle" fill="#64ffda" font-size="14" font-weight="bold">LLM Analyzer</text>
-                        <text x="175" y="110" text-anchor="middle" fill="#ccd6f6" font-size="11">Gemini API Integration</text>
+                        <rect x="100" y="60" width="150" height="60" rx="5" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+                        <text x="175" y="90" text-anchor="middle" fill="#1a237e" font-size="14" font-weight="bold">LLM Analyzer</text>
+                        <text x="175" y="110" text-anchor="middle" fill="#3f51b5" font-size="11">Gemini API Integration</text>
                         
-                        <rect x="100" y="160" width="150" height="60" rx="5" fill="#172a45" stroke="#64ffda" stroke-width="2" />
-                        <text x="175" y="190" text-anchor="middle" fill="#64ffda" font-size="14" font-weight="bold">Configuration</text>
-                        <text x="175" y="210" text-anchor="middle" fill="#ccd6f6" font-size="11">Settings Management</text>
+                        <rect x="100" y="160" width="150" height="60" rx="5" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+                        <text x="175" y="190" text-anchor="middle" fill="#1a237e" font-size="14" font-weight="bold">Configuration</text>
+                        <text x="175" y="210" text-anchor="middle" fill="#3f51b5" font-size="11">Settings Management</text>
                         
                         <!-- Right Components -->
-                        <rect x="550" y="40" width="150" height="60" rx="5" fill="#172a45" stroke="#64ffda" stroke-width="2" />
-                        <text x="625" y="70" text-anchor="middle" fill="#64ffda" font-size="14" font-weight="bold">Email Notifier</text>
-                        <text x="625" y="90" text-anchor="middle" fill="#ccd6f6" font-size="11">Alert System</text>
+                        <rect x="550" y="40" width="150" height="60" rx="5" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+                        <text x="625" y="70" text-anchor="middle" fill="#1a237e" font-size="14" font-weight="bold">Email Notifier</text>
+                        <text x="625" y="90" text-anchor="middle" fill="#3f51b5" font-size="11">Alert System</text>
                         
-                        <rect x="550" y="120" width="150" height="60" rx="5" fill="#172a45" stroke="#64ffda" stroke-width="2" />
-                        <text x="625" y="150" text-anchor="middle" fill="#64ffda" font-size="14" font-weight="bold">Logger</text>
-                        <text x="625" y="170" text-anchor="middle" fill="#ccd6f6" font-size="11">Log Management</text>
+                        <rect x="550" y="120" width="150" height="60" rx="5" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+                        <text x="625" y="150" text-anchor="middle" fill="#1a237e" font-size="14" font-weight="bold">Logger</text>
+                        <text x="625" y="170" text-anchor="middle" fill="#3f51b5" font-size="11">Log Management</text>
                         
-                        <rect x="550" y="200" width="150" height="60" rx="5" fill="#172a45" stroke="#64ffda" stroke-width="2" />
-                        <text x="625" y="230" text-anchor="middle" fill="#64ffda" font-size="14" font-weight="bold">Metrics Collector</text>
-                        <text x="625" y="250" text-anchor="middle" fill="#ccd6f6" font-size="11">Prometheus Integration</text>
+                        <rect x="550" y="200" width="150" height="60" rx="5" fill="#f5f7ff" stroke="#3f51b5" stroke-width="2" />
+                        <text x="625" y="230" text-anchor="middle" fill="#1a237e" font-size="14" font-weight="bold">Metrics Collector</text>
+                        <text x="625" y="250" text-anchor="middle" fill="#3f51b5" font-size="11">Prometheus Integration</text>
                         
                         <!-- Connections -->
-                        <line x1="250" y1="90" x2="300" y2="120" stroke="#64ffda" stroke-width="2" />
-                        <line x1="250" y1="180" x2="300" y2="150" stroke="#64ffda" stroke-width="2" />
-                        <line x1="500" y1="120" x2="550" y2="70" stroke="#64ffda" stroke-width="2" />
-                        <line x1="500" y1="140" x2="550" y2="150" stroke="#64ffda" stroke-width="2" />
-                        <line x1="500" y1="160" x2="550" y2="220" stroke="#64ffda" stroke-width="2" />
+                        <line x1="250" y1="90" x2="300" y2="120" stroke="#3f51b5" stroke-width="2" />
+                        <line x1="250" y1="180" x2="300" y2="150" stroke="#3f51b5" stroke-width="2" />
+                        <line x1="500" y1="120" x2="550" y2="70" stroke="#3f51b5" stroke-width="2" />
+                        <line x1="500" y1="140" x2="550" y2="150" stroke="#3f51b5" stroke-width="2" />
+                        <line x1="500" y1="160" x2="550" y2="220" stroke="#3f51b5" stroke-width="2" />
+                        
+                        <!-- Flow Arrows -->
+                        <circle cx="275" y="90" r="3" fill="#3f51b5" />
+                        <circle cx="275" y="180" r="3" fill="#3f51b5" />
+                        <circle cx="525" y="120" r="3" fill="#3f51b5" />
+                        <circle cx="525" y="140" r="3" fill="#3f51b5" />
+                        <circle cx="525" y="160" r="3" fill="#3f51b5" />
                     </svg>
                 </div>
             </div>
@@ -310,6 +367,12 @@
                         <div class="feature-title">Automatic Termination</div>
                         <p>Immediately kills identified malicious processes before attackers can establish persistence</p>
                     </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Enhanced Capabilities</h2>
+                <div class="features">
                     <div class="feature-item">
                         <div class="feature-title">Email Notifications</div>
                         <p>Sends detailed HTML alerts with threat information and recommended actions</p>
